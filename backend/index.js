@@ -1,15 +1,26 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const rootRouter = require("./routes/index");
 
-const PORT = process.env.PORT | 8000;
-
-dotenv.config();
 const app = express();
+dotenv.config();
 
-app.get("/ping", (req, res) => {
+app.use(express.json());
+app.use("/api", rootRouter);
+
+const PORT = process.env.PORT || 8000;
+const MONGO_URI = process.env.MONGO_URI;
+
+app.get("/", (req, res) => {
   res.send("hi there!");
 });
 
-app.listen(8000, () => {
+mongoose
+  .connect(MONGO_URI)
+  .then(() => console.log("connected to db successfully"))
+  .catch((error) => console.log("error in connected to db: " + error));
+
+app.listen(PORT, () => {
   console.log(`server successfully started at ${PORT}`);
 });
