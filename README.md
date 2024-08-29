@@ -1,27 +1,39 @@
 # Help Center API Assignment
 
-## Instructions
+## Setup the Backend
 
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/iAmritMalviya/fullstack-assignment
-   cd fullstack-assignment
-   ```
+Navigate to the backend directory and install the dependencies:
 
-2. **Frontend:**
-   - Create a React app in the `frontend` folder.
-   - Follow the instructions in `frontend.md` to complete the frontend.
+```bash
+cd backend
+npm install
+```
 
-3. **Backend:**
-   - Create a Node.js app in the `backend` folder.
-   - Follow the `backend.md` instructions to complete the backend.
+Create a '.env' file in the backend root folder and add the following environment variables
+PORT=8000
+MONGO_URI=your_mongodb_uri
 
-4. **Push Your Work:**
-   - Push both the frontend and backend apps to the same repository.
-   - Make sure the repository is public.
+Run the backend Server
 
-5. **Submit Your Work:**
-   - Paste the GitHub repository link in the Google form you received after pushing your code.
+```bash
+npm start
+```
 
----
+The backend server should now be running on http://localhost:8000.
 
+## Setup the Frontend
+
+Navigate to the frontend directory and install the dependencies:
+
+```bash
+cd frontend
+npm install
+```
+
+Run the frontend Server
+
+```bash
+npm run dev
+```
+
+The frontend should now be running on http://localhost:5173.
