@@ -9,6 +9,7 @@ const cardBody = zod.object({
   description: zod.string(),
 });
 
+//route to post a card
 router.post("/", async (req, res) => {
   try {
     const { success } = cardBody.safeParse(req.body);
@@ -46,6 +47,7 @@ router.post("/", async (req, res) => {
   }
 });
 
+//route to fetch all cards
 router.get("/", async (req, res) => {
   try {
     const cards = await Card.find();
@@ -60,6 +62,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+//route to fetch a specific card
 router.get("/:title", async (req, res) => {
   try {
     const title = req.params.title.trim();
