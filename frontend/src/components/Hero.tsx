@@ -21,11 +21,18 @@ const Hero: React.FC = () => {
       });
   }, []);
 
+  const handleSearch = (term: string) => {
+    setSearchTerm(term.toLowerCase());
+  };
+  const filteredCards = cards.filter((card: CardItem) =>
+    card.title.toLowerCase().includes(searchTerm)
+  );
+
   return (
     <>
-      <Search />
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(350px,1fr))] gap-x-20 gap-y-20 p-20 place-items-center">
-        {cards.map((item: CardItem) => (
+      <Search onSearch={handleSearch} />
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-x-20 gap-y-20 p-20 place-items-center">
+        {filteredCards.map((item: CardItem) => (
           <Card key={item._id} item={item} />
         ))}
       </div>

@@ -9,7 +9,7 @@ const CommunityRow = ["Twitter", "LinkedIn", "Facebook", "Dribble", "Podcast"];
 const CompanyRow = ["About Us", "Careers", "Legal"];
 const Footer: React.FC = () => {
   return (
-    <div className="bg-black text-[#e7e8e7] flex justify-evenly py-8 rounded-b-2xl">
+    <div className="bg-black text-[#e7e8e7] flex justify-evenly py-8 rounded-b-2xl flex-wrap">
       <FooterCard title="Abstract" data={AbstractRow} />
       <FooterCard title="Resources" data={ResourcesRow} />
       <FooterCard title="Community" data={CommunityRow} />

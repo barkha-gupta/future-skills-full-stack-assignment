@@ -1,7 +1,7 @@
 import Logo from "../assets/logo.png";
 const Header: React.FC = () => {
   return (
-    <div className="bg-black border-t rounded-t-2xl text-[#e7e8e7] flex items-center justify-between px-12 py-4">
+    <div className="bg-black border-t rounded-t-2xl text-[#e7e8e7] flex items-center justify-between px-12 py-4 gap-2">
       <div className="flex items-center gap-2">
         <span>
           <img src={Logo} alt="logo" className="w-8 h-8" />
